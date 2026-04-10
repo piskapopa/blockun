@@ -1,11 +1,13 @@
 class BlockunError(PythonFinalizationError):
     pass
+blocks = {}
+stdout = 0
+koshschi_metki = {}
 def lex(c):
     c = c.split("\n")
+    if c[-1] == "\n":
+        c.pop()
     num = -1
-    blocks = {}
-    stdout = 0
-    koshschi_metki = {}
     while True:
         try:
             num+=1
@@ -36,7 +38,7 @@ def lex(c):
                                 case "-"|" -"|"- "|" - ":
                                     blocks[int(i[1::])][0]-=val
                                 case "/"|" /"|"/ "|" / ":
-                                    blocks[int(i[1::])][0]//=val
+                                    blocks[int(i[1::])][0]/=val
                                 case "*"|" *"|"* "|" * ":
                                     blocks[int(i[1::])][0]*=val
                                 case "%"|" %"|"% "|" % ":

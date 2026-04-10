@@ -1,0 +1,7 @@
+crt label
+mount 0 +
+inp to b0
+mount 0 *
+2 to b0
+b0 to stdout charout
+goto label
