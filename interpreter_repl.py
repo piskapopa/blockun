@@ -4,6 +4,7 @@ blocks = {}
 stdout = 0
 koshschi_metki = {}
 def lex(c):
+    global blocks, stdout, koshschi_metki
     c = c.split("\n")
     if c[-1] == "\n":
         c.pop()
